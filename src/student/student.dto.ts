@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
-export class AddressReqDto {
+export class StudentReqDto {
 
 
-    public constructor(init?: Partial<AddressReqDto>) {
+    public constructor(init?: Partial<StudentReqDto>) {
         Object.assign(this, init);
     }
 
@@ -10,19 +10,32 @@ export class AddressReqDto {
     Id: number;
 
     @ApiProperty()
-    CustomerId: number;
+    FirstName: string;
 
     @ApiProperty()
-    AddressLine1: string;
+    LastName: string;
 
     @ApiProperty()
-    AddressLine2: string;
+    DOB:string;
+
+    @ApiProperty()
+    Email: string;
+
+    @ApiProperty()
+    RollNo:string;
+
+    @ApiProperty()
+    Age:number;
+
     @ApiProperty()
     City: string;
+
     @ApiProperty()
-    PostalCode: string;
+    PinCode:string;
+
     @ApiProperty()
     Country: string;
+
     @ApiProperty()
     Mobile: string;
 }

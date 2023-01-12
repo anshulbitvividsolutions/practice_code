@@ -5,8 +5,9 @@ import { AppService } from './app.service';
 
 import { AddressController } from './address/address.controller';
 import { AddressModule } from './address/address.module';
-import { MulterModule } from '@nestjs/platform-express';
-
+import { StudentController } from './student/student.controller';
+import { StudentService } from './student/student.service';
+import {StudentModule} from './student/student.module'
 
 @Module({
   imports: [       
@@ -20,10 +21,10 @@ import { MulterModule } from '@nestjs/platform-express';
       entities: [],
       autoLoadEntities: true,
       synchronize: true,
-    }),  AddressModule, 
+    }),  AddressModule, StudentModule, 
   ],
   
-  controllers: [AppController, AddressController, ],
+  controllers: [AppController, AddressController, StudentController, ],
   providers: [AppService],
 })
 

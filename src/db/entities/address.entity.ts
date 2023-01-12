@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 
 @Entity()
@@ -30,14 +30,14 @@ export class address {
   @Column({nullable:true})
   Country: string;
 
-  @Column({nullable:true})
-  Phone: string;
+ 
 
   @Column({nullable:true})
   Mobile: string;
 
   
-
+  @OneToMany(type => address, address => address.student)
+  student: address[]
 
 
 }
